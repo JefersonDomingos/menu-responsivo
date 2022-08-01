@@ -1,0 +1,142 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200,300,400,500&display=swap'); /*IMPORTEI a font INTER no googleFontes*/
+
+*{
+    margin:0;
+    padding:0; 
+    font-family: 'Inter',sans-serif; /*Coloquei a font que peguei do googleFonts  e coloquei para o  meu body , se der problema vai pegar a padrão sans-serif*/
+}
+
+header{
+    background-color: aqua;  
+    box-shadow: 0px 3px 10px black;   /*Essa sombra vai ficar em "Degradê na cor preta*/ 
+   
+}
+
+.nav-bar{
+    display:flex; /*Coloca os itens um ao lado do outro*/
+    justify-content:space-between; /*Divisão de espaço dos itens*/
+    padding: 1.6rem 6rem /* rem -> tema ver com a RESPONSIVIDADE*/
+}
+
+.logo{
+    display:flex; /*colocar do lado*/
+    align-items: center; /*deixar centralizado*/
+    color:white; /*cor do elemento ou font*/
+}
+
+.ul-nav {
+    display:flex; /* A minha lista vai ficar um ITEM ao lado do outro */
+    justify-content: center; /*justificar o conteudo no centro*/
+    list-style: none; /*Tira o estilo da lista NÃO APRECE mais aqueles pontinhos nos itens*/ 
+}
+
+.nav-item{
+  
+    margin-left: 15px; /*Uma distância para a esquerda de 15px*/
+}
+
+.nav-link{
+    text-decoration: none; /* Tira as decorações dos LINKS*/
+    font-size: 1.5rem; /*tamanho da font e REM tem a ver com RESPONSIVIDADE*/
+    color:white; /*cor do elemento ou font*/
+    font-weight: 400; /*Espessura da font*/
+}
+
+.login-button  button { 
+    border:none; /*retirar as bordas do botão*/
+    background-color: aliceblue; /*cor de fundo do botão*/
+    padding: 10px 15px ; /*10px de margem interna de ALTURA e 15px de LARGURA;*/
+    border-radius:5px; /*Arredondar os cantos*/
+}
+
+.link-login{
+    text-decoration: none; /* Tira as decorações dos LINKS*/
+    color:rgb(83, 118, 183);  /*cor do elemento ou font*/
+}
+
+/*A PARTE DO MENU-HAMBURGUER*/
+
+.menu-hamburguer{   /*DIV pai do menu hamburgur é IMPORTANTE NA HORA DE CRIAR ESSE MENU colocar um background-color:red; para exergar DEPOIS retiramos o background*/
+    
+    width:20px; 
+    height:20px;
+    
+}
+
+.m-hamburguer{
+    background-color: black; 
+    margin-bottom: 2px; /*margem de BAIXO para dar espaçamento entre as 3 divs FILHAS*/
+    width: 15px; /*largura das divs filhas*/
+    height:3px; /*altura da divs filhas*/
+}
+
+
+.menu-hamburguer{
+    display:none;  /*Escoonder menu-hamburguer...vai aparecer quando eu trocar o tamanho da tela com o  @media screen and (max-width)*/ 
+}
+
+.button-menu-hamburguer{
+    background-color: transparent; /*coloquei esse background para que o botão não ficasse na cor padrão atrapalhando o disgner*/
+    border:none; /*Tirei as bordas do botão para ele ficar sem os riscos preto das bordas*/
+    cursor: pointer; /*Para ficar com a mãozinha no mouse quando passar por cima*/
+}
+
+.menu-mobile{
+    display:none; /*esconder menu-mobile...vai aparecer quando eu trocar o tamanho da tela com o  @media screen and (width)*/
+}
+
+/*AGORA VAMOS FAZER COM QUE OS MENUS APARECEM E OS MENUS DA TELA MAIOR DESAPAREÇAM*/
+
+@media screen and (max-width:600px){
+    .nav-bar{
+        padding: 1.5rem 4rem
+    }
+
+    .nav-item{
+        display:none; /*Vai desaparecer os ITENS DE Inicio Projetos Sobre */
+    }
+
+    .login-button{
+        display:none; /*Os botão ENTRAR vão sair porque estão na mesma classe tanto o mobile , quanto o desktop ou nav */
+    }
+
+    .menu-hamburguer{ /*Vai mostrar meu icone de menu que criei em formato de hamburguer*/
+        display:block;
+    }
+
+    .menu-mobile ul{
+        display: flex; /*vai organizar os itens da minha ul um do lado do outro*/
+        flex-direction: column; /*os itens vão ficar em coluna um embaixo do outro*/
+        text-align: center ; /*Para centralizar meus itens da minha <ul>*/
+        padding-bottom: 1rem;
+
+    }
+
+    .menu-mobile .nav-item{
+        display:block; /*os Itens do menu mobile serão vistos*/
+        padding-top: 1.2rem;
+    }
+
+    .menu-mobile .login-button{  
+        display: block;  /*Vai exibir a <div class="login-button">*/
+        padding: 1rem  2rem;
+       
+        
+        
+        
+    }
+
+    .menu-mobile .login-button button{
+        width:100%; /*O botão vai ter 100% do  tamanho da <div class="login-button"*/
+        
+    }
+
+    .openMenu{ /*Criei essa classe para colocar no JavaScript ...quando eu clicar no botão de menu ela vai fazer algumas coisas*/
+        display:block;   /*Ela será colocada em menu-mobile e REMOVIDA de menu-mobile com a função onclick="menuShow()"*/ 
+        /*Essa classe só existe com  a tela menor que 600px @media screen and (max-width:600px) */
+       
+    }
+
+
+
+}
